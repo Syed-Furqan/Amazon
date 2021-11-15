@@ -4,7 +4,7 @@ const Product = ({id, title, image, price, rating}) => {
     const rows = [];
 
     for(let i = 0; i<rating; i++){
-        rows.push(<span>⭐</span>);
+        rows.push(<span key={i}>⭐</span>);
     }
 
     return (
