@@ -1,15 +1,21 @@
 import "./HeaderLarge.css"
 import SearchIcon from "@material-ui/icons/Search"
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket"
+import { Link } from "react-router-dom";
+import { useStateValue } from "./StateProvider";
 
 const HeaderLarge = () => {
+    const [{basket}] = useStateValue();
+
     return (
         <div className="header">
-            <img
-                className="header__logo" 
-                src="https://pngimg.com/uploads/amazon/amazon_PNG25.png"
-                alt="amazon-logo"
-            />
+            <Link to="/">
+                <img
+                    className="header__logo" 
+                    src="https://pngimg.com/uploads/amazon/amazon_PNG25.png"
+                    alt="amazon-logo"
+                />
+            </Link>
             <div className="header__search">
                 <input className="header__searchInput" type="text"/>
                 < SearchIcon className="header__searchIcon"/>
@@ -30,10 +36,12 @@ const HeaderLarge = () => {
                 </div>
             </div>
 
-            <div className="header__optionBasket">
-                < ShoppingBasketIcon />
-                <span className="header__optionLine2 header__basketCount">0</span>
-            </div>
+            <Link to="/checkout">
+                <div className="header__optionBasket">
+                    < ShoppingBasketIcon />
+                    <span className="header__optionLine2 header__basketCount">{ basket?.length }</span>
+                </div>
+            </Link>
             
         </div>
     );

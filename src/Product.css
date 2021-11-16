@@ -27,9 +27,15 @@
 .product > button {
     background: #f0c14b;
     border: 1px solid;
+    border-radius: 2px;
+    height: 25px;
     margin-top: 10px;
     border-color: #a88734 #9c7e31 #846a29;
     color: #111;
+}
+
+.product > button:hover {
+    background: #ffb702;
 }
 
 .product__price {

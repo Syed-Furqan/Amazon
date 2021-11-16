@@ -44,7 +44,7 @@ const Home = () => {
                     < Product 
                         id="8836437"
                         title="Logitech G 331 6 mm Wireless Gaming Headset with Flip-to-Mute Mic for Playstation 4" 
-                        price="3790"
+                        price="3,790"
                         image="https://m.media-amazon.com/images/I/51F635OpcQL._AC_UY327_FMwebp_QL65_.jpg"
                         rating={3}
                     />
