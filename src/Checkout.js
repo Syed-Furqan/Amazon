@@ -4,8 +4,17 @@ import SubTotal from "./SubTotal";
 
 
 const Checkout = () => {
-    const [{basket}] = useStateValue();
-    
+    const [{basket}, dispatch] = useStateValue();
+
+    const removeFromBasket = (id) => {
+        dispatch({
+            type: 'REMOVE_FROM_BASKET',
+            id: id
+        });
+    }
+
+    let i = 0;
+
     return (
         <div className="checkout">
             <div className="checkout__left">
@@ -16,22 +25,20 @@ const Checkout = () => {
                 <div className="checkout__container">
                     <h2 className="checkout__title">Your Shopping Basket</h2>
                     <div className="checkout__items">
+                        
                         {basket.map(item => (
-                                <div className="item" key={item.id}>
+                                <div className="item" key={i++}>
                                     <div className="item__info">
                                         <p>{item.title}</p>
                                         <p className="item__price">
                                             <small>₹</small><strong>{item.price}</strong>
                                         </p>
-                                        <div className="item__rating">
-                                            {item.rows}
-                                        </div>
                                     </div>
                                     <img
                                         src={item.image}
                                         alt=""
                                     />
-                                    <p><button>Remove from Basket</button></p>
+                                    <p><button onClick={() => removeFromBasket(item.id)}>Remove from Basket</button></p>
                                 </div>
                         ))}
                     </div>

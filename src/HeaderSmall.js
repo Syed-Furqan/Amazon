@@ -23,10 +23,12 @@ const HeaderSmall = () => {
                 </div>
             </div>
             <div className="headerSmall__nav">
-                <div className="header__option">
-                    <span className="header__optionLine1">Hello Guest</span>
-                    <span className="header__optionLine2">Sign In</span>
-                </div>
+                <Link to="/login">
+                    <div className="header__option">
+                        <span className="header__optionLine1">Hello Guest</span>
+                        <span className="header__optionLine2">Sign In</span> 
+                    </div>
+                </Link>
                 <div className="header__option">
                     <span className="header__optionLine1">Returns</span>
                     <span className="header__optionLine2">& Orders</span>
