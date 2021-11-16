@@ -1,0 +1,70 @@
+.login {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.login__logo {
+    width: 100px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.login__info {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid lightgray;
+}
+
+@media (max-width: 340px) {
+    .login__info {
+        width: 250px;
+    }
+}
+
+.login__info > form {
+    display: flex;
+    flex-direction: column;
+}
+
+form > input {
+    height: 35px;
+    width: 100%;
+    margin-top: 3px;
+    margin-bottom: 10px;
+}
+
+form > p {
+    font-size: 10px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+#signIn {
+    font-weight: 600;
+    background: #f0c14b;
+    border: 1px solid;
+    border-radius: 2px;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: #111;
+    height: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#signUp {
+    font-weight: 600;
+    border: 1px solid;
+    border-radius: 2px;
+    color: #111;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.login__info > h1 {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
