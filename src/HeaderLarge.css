@@ -36,6 +36,10 @@
     background-color: #cd9042;
 }
 
+.header__option {
+    text-decoration: none;
+}
+
 .header__optionLine1 {
     font-size: 10px;
 }
