@@ -4,7 +4,7 @@ import SubTotal from "./SubTotal";
 
 
 const Checkout = () => {
-    const [{basket}, dispatch] = useStateValue();
+    const [{basket, user}, dispatch] = useStateValue();
 
     const removeFromBasket = (id) => {
         dispatch({
@@ -23,6 +23,7 @@ const Checkout = () => {
                     alt=""
                 />
                 <div className="checkout__container">
+                    <h4 className="checkout__username"><small>Welcome, </small> {user ? user?.email : "Guest"}</h4>
                     <h2 className="checkout__title">Your Shopping Basket</h2>
                     <div className="checkout__items">
                         

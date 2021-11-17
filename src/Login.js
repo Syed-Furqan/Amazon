@@ -1,18 +1,39 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { auth } from "./firebase";
 import "./Login.css"
 
 const Login = () => {
+
+    const history = useHistory();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const signIn = e => {
-        e.preventdefault();
+        e.preventDefault();
+
+        auth.signInWithEmailAndPassword(email, password)
+            .then(auth => {
+                history.push("/");
+            })
+            .catch(err => {
+                alert(err.message);
+            });
     }
 
     const register = e => {
-        e.preventdefault();
+        e.preventDefault();
+
+        auth.createUserWithEmailAndPassword(email, password)
+            .then(auth => {
+                if(auth) {
+                    history.push("/");
+                }
+            })
+            .catch(err => {
+                alert(err.message);
+            });
     }
 
     return (
@@ -27,10 +48,11 @@ const Login = () => {
             <div className="login__info">
                 <h1>Sign in</h1>
                 <form>
-                    <label for="em"><small><strong>E-mail</strong></small></label>
-                    <input id="em" type="text" value={email} onChange={e => setEmail(e.target.value)}/>
-                    <label for="pw"><small><strong>Password</strong></small></label>
-                    <input id="pw" type="password" value={password} onChange={e => setPassword(e.target.value)}/> 
+                    <h5>E-mail</h5>
+                    <input type="text" value={email} onChange={e => setEmail(e.target.value)}/>
+
+                    <h5>Password</h5>
+                    <input type="password" value={password} onChange={e => setPassword(e.target.value)}/> 
 
                     <button type="submit" onClick={signIn} id="signIn">Sign In</button>
 
