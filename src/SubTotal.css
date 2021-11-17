@@ -18,18 +18,18 @@
     margin-right: 5px;
 }
 
-.subtotal > button {
+.subtotal__paymentButton {
     background: #f0c14b;
     border-radius: 2px;
     height: 30px;
-    width: 100%;
+    width: 200px;
     border: 1px solid;
     border-color: #a88734 #9c7e31 #846a29;
     color: #111;
 }
 
 @media (max-width: 840px) {
-    .subtotal > button {
+    .subtotal__paymentButton {
         width: 200px;
     }
 }
