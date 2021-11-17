@@ -6,11 +6,14 @@ import { Link } from "react-router-dom";
 import { auth } from "./firebase";
 
 const HeaderSmall = () => {
-    const [{basket, user}] = useStateValue();
+    let [{basket, user}, dispatch] = useStateValue();
 
     const handleAuthentication = () => {
         if(user) {
             auth.signOut();
+            dispatch({
+                type: 'EMPTY'
+            });
         }
     }
 

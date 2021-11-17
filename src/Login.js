@@ -2,8 +2,11 @@ import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "./firebase";
 import "./Login.css"
+import { useStateValue } from "./StateProvider";
 
 const Login = () => {
+
+    const [, dispatch] = useStateValue();
 
     const history = useHistory();
 
@@ -20,6 +23,10 @@ const Login = () => {
             .catch(err => {
                 alert(err.message);
             });
+        
+        dispatch({
+            type: 'EMPTY'
+        });
     }
 
     const register = e => {

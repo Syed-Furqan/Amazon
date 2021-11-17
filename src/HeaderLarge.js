@@ -6,11 +6,14 @@ import { useStateValue } from "./StateProvider";
 import { auth } from "./firebase";
 
 const HeaderLarge = () => {
-    const [{basket, user}] = useStateValue();
+    let [{basket, user}, dispatch] = useStateValue();
 
     const handleAuthentication = () => {
         if(user) {
             auth.signOut();
+            dispatch({
+                type: 'EMPTY'
+            });
         }
     }
 
