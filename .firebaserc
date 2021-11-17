@@ -1,5 +1,9 @@
 {
   "projects": {
+<<<<<<< HEAD
     "default": "store-sfb"
+=======
+    "default": "fir-513c7"
+>>>>>>> parent of 61e5d87 (Final Commit)
   }
 }
